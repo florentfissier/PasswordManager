@@ -1,0 +1,28 @@
+{
+  "name": "passwordmanager",
+  "version": "1.1.1",
+  "description": "Simple Password Manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.FlorentFissier.PasswordManager",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.ico"
+    }
+  },
+  "author": "Florent FISSIER",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "electron": "^16.0.6",
+    "electron-builder": "^22.14.5"
+  }
+}
