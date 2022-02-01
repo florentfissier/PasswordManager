@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Password Manager</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="../assets/css/w3.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <script type="text/javascript" src="renderer.js"></script>
+</head>
+<body>
+    <div id="master-password" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <p id="master-para">Pour commencer, choisissez un mot de passe maître</p>
+          <div id="div-master-input">
+            <input type="password" name="master" id="master">
+            <span id="span-eye">
+              <i class="fas fa-eye-slash" id="toggle-password" onclick="show_password()"></i>
+            </span>
+          </div>
+          <div id="div-master-button">
+            <button class="w3-btn w3-blue w3-round-xxlarge" onclick="create_master_password_file_linux()" id="master-button">Enregistrer ce mot de passe maître</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="delete-element-modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <h3>Voulez-vous vraiment supprimer <span id="element-to-del"></span>?</h3>
+          <div>
+            <button id="confirm-deletion" class="w3-btn">Oui</button>
+            <button id="cancel-deletion" class="w3-btn">Non</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modify-element-modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <h3>Modification de: <span id="element-to-modify"></span></h3>
+          <p>
+            <label for="input-name-modify">Nom de l'application</label>
+            <input type="text" name="input-name-modify" id="input-name-modify" onkeyup="enable_disable_save_button_modify()">
+          </p>
+          <p>
+            <label for="input-url-modify">URL du site</label>
+            <input type="text" name="input-url-modify" id="input-url-modify">
+          </p>
+          <div id="wrapper-modify-im-key">
+            <div id="image-div-modify">
+              <h6>Image de l'application</h6>
+              <span id="span-image-modify"></span>
+              <i id="remove-image-modify" class="w3-btn w3-round fas fa-times" onclick="remove_image_modify()"></i>
+              <button onclick="choose_image_modify()">Parcourir</button>
+              <input type="hidden" name="hidden-input-modify" id="hidden-input-modify">
+            </div>
+            <div id="key-div-modify">
+              <h6>Clé privée</h6>
+              <span id="span-key-modify"></span>
+              <i id="remove-key-modify" class="w3-btn w3-round fas fa-times" onclick="remove_key_modify()"></i>
+              <button onclick="choose_key_modify()">Parcourir</button>
+              <input type="hidden" name="hidden-input-key-modify" id="hidden-input-key-modify">
+            </div>
+          </div>
+          <p>
+            <label for="input-login-modify">Identifiant de connexion</label>
+            <input type="login" name="input-login-modify" id="input-login-modify">
+          </p>
+          <p>
+            <label for="input-password-modify">Mot de passe associé à l'identifiant</label>
+            <input type="password" name="input-password-modify" id="input-password-modify" onkeyup="enable_disable_save_button_modify()">
+            <span id="span-eye-modify-modal">
+              <i id="i-modify-modal" class="fas fa-eye-slash" onclick="show_password_input_pass_modify()"></i>
+            </span>
+            <button class="w3-btn" onclick="generate_random_password_modify()">Générer un mot de passe aléatoire</button>
+          </p>
+          <div id="modify-buttons-cancel-confirm">
+            <button id="confirm-modification-button" class="w3-btn" onclick="confirm_modification()">Confirmer</button>
+            <button class="w3-btn" onclick="close_modify_element_modal()">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="generate-random-pass-modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <p>Longueur du mot de passe: <span id="output-range-random-password">8</span> caractères
+            <input id="length-range-gen-pass" type="range" value="8" min="8" max="20" oninput="change_length_gen_pass(this.value)">
+          </p>
+          <p>Inclure des caractères numériques: 
+            <input type="checkbox" id="checkbox-num-random-pass" checked>
+          </p>
+          <p>Inclure des caractères spéciaux: 
+            <input type="checkbox" id="checkbox-spec-random-pass" checked>
+          </p>
+          <div id="gen-random-pass-buttons-cancel-confirm">
+            <button id="generate-random-pass-button" class="w3-btn" onclick="confirm_gen_random_pass()">Générer</button>
+            <button class="w3-btn" onclick="close_generate_random_pass_modal()">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main" class="w3-main">
+      <div id="main-margin-bot">
+        <div class="w3-container" id="main-container">
+          <div class="w3-display-container" id="main-display-container">
+            <div class="w3-display-left" id="infos-list">
+            </div>
+            <div class="w3-display-right" id="infos-element">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="container-bottom" class="w3-container">
+        <div id="display-container-bottom" class="w3-display-container">
+          <div id="bottom-button" class="w3-display-left">
+            <span id="add-button" onclick="add_element_to_list()"><i class="fa fa-plus"></i> Ajouter un élément</span>
+          </div>
+          <div id="modify-element" class="w3-display-right">
+            <span id="modify-button" onclick="modify_element()"><i class="fas fa-pencil-alt"></i> Modifier</span>
+            <span id="delete-element" onclick="delete_element()"><i class="fas fa-trash"></i> Supprimer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
