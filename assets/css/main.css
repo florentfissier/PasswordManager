@@ -1,0 +1,458 @@
+#master-password {
+	height:  100%;
+	padding-top: 0!important;
+}
+
+.w3-modal-content {
+	background-color: #2e3c4c;
+    color: white;
+}
+
+#master-password .w3-modal-content {
+	width: 100%!important;
+    height: 100%!important;
+    background-color: #2a475e!important;
+}
+
+#master-password .w3-modal-content .w3-container {
+	width: 100%;
+	height: 100%;
+    display: grid;
+}
+
+#master-password .w3-modal-content .w3-container p {
+	text-align: center;
+	font-size: 32px;
+	margin: auto;
+	color: white;
+}
+
+#toggle-password, #i-modify-modal {
+	color: black;
+}
+
+#div-master-input {
+	margin: auto;
+}
+
+#div-master-input span {
+	margin-left: -36px;
+	cursor:  pointer;
+}
+
+#div-master-button {
+	margin: auto;
+}
+
+#master {
+	font-size: 32px;
+	height: fit-content;
+	margin: auto;
+	border-radius: 32px;
+	border:  1px solid grey;
+	padding-left: 20px;
+	padding-right: 36px;
+}
+
+#master-password .w3-modal-content .w3-container button {
+	margin: auto;
+}
+
+#main {
+	height: 94vh;
+	display: none;
+	background-color: #2a475e;
+    color: white;
+}
+
+#main-margin-bot{
+	height: 100%;
+}
+
+#main-container {
+	height: 100%;
+}
+
+#main-display-container{
+	height: 100%;
+}
+
+#infos-list, #infos-element {
+	height: 100%;
+}
+
+#infos-list {
+	width: 33%;
+	overflow-y: auto;
+	padding-right: 12px;
+	border-right: 1px solid;
+}
+
+/*
+#style-16::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-16::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-16::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,
+											  #e4f5fc 0%,
+											  #bfe8f9 50%,
+											  #9fd8ef 51%,
+											  #2ab0ed 100%);
+}
+*/
+
+#container-bottom {
+	height: 6vh;
+	background-color: #2a475e;
+}
+
+#display-container-bottom {
+	height: 100%;
+}
+
+#bottom-button, #modify-element {
+	height: 100%;
+}
+
+#gen-ran-pass-button {
+	font-size: 12px;
+	background-color: #55697852;
+}
+
+#bottom-button {
+	width: 33%;
+	padding-right: 12px;
+	border-right: 1px solid;
+	text-align: center;
+}
+
+#modify-element {
+	display: none;
+	width: 67%;
+}
+
+#modify-button {
+	display: inline-block;
+    width: 67%;
+    padding-left: 24px;
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(6px);
+}
+
+#delete-element {
+	display: inline-block;
+	cursor: pointer;
+	transform: translateY(6px);
+}
+
+#delete-element i {
+	color: red;
+}
+
+#add-button {
+	width: 100%;
+	display: block;
+	cursor: pointer;
+	transform: translateY(6px);
+}
+
+#infos-element {
+	width: 67%;
+	padding-left: 12px;
+}
+
+#input-wrapper {
+	display: grid;
+	padding-top: 6px;
+}
+
+#input-name, #input-url, #input-login, #input-pass {
+	width: 100%;
+	border-radius: 6px;
+	border: none;
+	padding-left: 6px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#input-pass {
+	margin-bottom: 6px;
+}
+
+#input-wrapper button {
+	border-radius: 6px;
+}
+
+#image-div, #image-div-modify {
+	width: 50%;
+	float: left;
+	border-right: 1px solid white;
+}
+
+#key-div, #key-div-modify {
+	width: 50%;
+	float: right;
+	padding-left: 12px;
+}
+
+h6 {
+	font: 15px Verdana, sans-serif;
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+    background: #ddd;
+    border: none;
+    border-radius: 100px;
+	height: 5px;
+	width: 100%;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: rgb(114, 114, 114);
+	height: 12px;
+	width: 12px;
+	border-radius: 100%;
+}
+
+#gen-random-pass-buttons-cancel-confirm {
+	text-align: center;
+    margin-bottom: 12px;
+	padding-top: 12px;
+}
+
+#span-eye-input-pass {
+	margin-left: -40px;
+	color: black;
+	cursor: pointer;
+}
+
+#add-image, #add-key {
+	background-color: #bdbdbd;
+}
+
+#search-bar {
+	background-image: url(../icons/searchicon.png);
+	background-position: 10px 12px;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding: 10px 12px 10px 40px;
+	margin: 6px 0;
+	border-radius: 6px;
+	position: sticky;
+	top: 6px;
+}
+
+.list-element {
+	border-bottom: 1px solid grey;
+	cursor: pointer;
+	line-height: 45px;
+}
+
+.list-element span {
+	font-weight: bold;
+}
+
+#closer-show-element {
+	position: relative;
+	left: 90%;
+	cursor: pointer;
+}
+
+#selected-key {
+	font-size: 10px;
+}
+
+#remove-image, #remove-key {
+	color: red;
+}
+
+#wrapper-closer {
+	padding-top: 12px;
+}
+
+#wrapper-image {
+	text-align: center;
+	padding-top: 36px;
+}
+
+#element-title {
+	text-align: center;
+	/* padding-bottom:  72px; */
+}
+
+#has-key {
+	text-align: center;
+	padding-bottom: 52px;
+}
+
+#infos-element table {
+	margin: auto;
+	padding-top: 36px;
+	border-collapse: collapse;
+}
+
+.row-bottom-bordered {
+	border-bottom: 1px solid grey;
+}
+
+.left-hand-cells {
+	text-align: right;
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+.right-hand-cells {
+	padding-left: 12px;
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+#url-cell {
+	word-break: break-word;
+}
+
+#password-cell input {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    padding: 0;
+}
+
+#copy-password {
+	padding-left: 12px;
+	cursor: pointer;
+	float: right;
+}
+
+#delete-element-modal h3 {
+	text-align: center;
+}
+
+#delete-element-modal .w3-modal-content .w3-container p {
+	text-align: center;
+}
+
+#delete-element-modal .w3-modal-content .w3-container div {
+	text-align: center;
+	padding-bottom: 12px;
+}
+
+#modify-element-modal {
+	padding-top: 5%;
+}
+
+#modify-element-modal h3 {
+	text-align: center;
+}
+
+#modify-element-modal input {
+	width: 100%;
+}
+
+#wrapper-modify-im-key {
+	display: flex;
+}
+
+#remove-image-modify, #remove-key-modify {
+	display: none;
+	color: red;
+}
+
+#modify-buttons-cancel-confirm {
+	text-align: center;
+	padding-bottom: 12px;
+}
+
+#span-eye-modify-modal {
+	margin-left: -40px;
+}
+
+#input-password-modify {
+	margin-bottom: 6px;
+}
+
+#arrow-add {
+	position: absolute;
+    font-size: 42px;
+    bottom: 24px;
+    left: 15%;
+    transform: rotate(-45deg);
+    color: #ffffff;
+    transition: auto;
+    transition-duration: 2s;
+    animation: curvedArrow 4s infinite;
+}
+
+@keyframes curvedArrow {
+	0% { color: #ffffff; }
+	50% { color: #ffffff00; }
+	100% { color: #ffffff; }
+}
+
+#arrow-input-name {
+	color: #ffffff;
+	font-size: 42px;
+	position: absolute;
+    top: 52px;
+    transform: rotate(180deg);
+	animation: curvedArrow 4s infinite;
+}
+
+#arrow-input-pass {
+	color: #ffffff;
+	font-size: 42px;
+	position: absolute;
+    top: 360px;
+    left: -24px;
+    transform: rotate(-135deg);
+	animation: curvedArrow 4s infinite;
+}
+
+#arrow-save-button {
+	color: #ffffff;
+	font-size: 42px;
+	position: absolute;
+    top: 452px;
+    left: -24px;
+    transform: rotate(-135deg);
+	animation: curvedArrow 4s infinite;
+}
+
+#arrow-show-element {
+	color: #ffffff;
+	font-size: 42px;
+	animation: curvedArrow 4s infinite;
+	position: absolute;
+	top: 58px;
+	transform: rotate(45deg);
+}
+
+#arrow-close-show-element {
+	color: #fff;
+    font-size: 42px;
+    position: absolute;
+    top: 19px;
+	right: 32px;
+	transform: rotate(135deg);
+	animation: curvedArrow 4s infinite;
+}
